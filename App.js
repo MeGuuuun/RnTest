@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>please don't make error please....</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -18,3 +18,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+/* 
+View component is the most fundamental component for building a UI
+View is a container that supports layout with flexbox, style, some touch handling, and accessibility controls
+*/

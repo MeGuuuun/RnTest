@@ -3,20 +3,42 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>please don't make error please....</Text>
+    <View style={styles.mainView}>
+      <Text style={styles.mainText}>Please don't make an error....</Text>
+      <View style={styles.subView}>
+        <Text>First subView</Text>
+      </View>
+
+      <View style={styles.subView}>
+        <Text>Second subView</Text>
+      </View>
+
       <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  mainView:{
+    backgroundColor:'green',
+    flex:1,
+    marginTop:50,
+    alignItems:'center',
+    justifyContent:'center'
   },
+  
+  subView: {
+    backgroundColor:'yellow',
+    flex:4,
+    marginBottom:10
+  },
+
+  mainText : {
+    fontSize : 50,
+    fontWeight: 'bold',
+    color:'red',
+    padding:20
+  }
 });
 
 /* 

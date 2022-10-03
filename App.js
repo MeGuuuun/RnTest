@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './Components/Header'
+import {useState} from "react";
 
 export default function App() {
+  const [appName, setAppName] = useState("First App")
   return (
     <View style={styles.mainView}>
-      <Header></Header>
+      <Header name = {appName} />
     </View>
   );
 }

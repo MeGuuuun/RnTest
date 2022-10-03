@@ -1,9 +1,12 @@
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import { useState } from 'react';
 
-const Header = () => (
-    <View style = {styles.header}>
-        <Text style = {styles.mainText}>This is Header</Text>
-    </View>
+const Header = (props) => (
+    <TouchableOpacity style= {styles.header} onPress={()=> alert('hello')}>
+        <View style = {styles.header}>
+            <Text style = {styles.mainText}>{props.name}</Text>
+        </View>
+    </TouchableOpacity>
 )
 
 const styles = StyleSheet.create({

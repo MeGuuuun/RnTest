@@ -1,19 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Header from './Components/Header'
 
 export default function App() {
   return (
     <View style={styles.mainView}>
-      <Text style={styles.mainText}>Please don't make an error....</Text>
-      <View style={styles.subView}>
-        <Text>First subView</Text>
-      </View>
-
-      <View style={styles.subView}>
-        <Text>Second subView</Text>
-      </View>
-
-      <StatusBar style="auto" />
+      <Header></Header>
     </View>
   );
 }

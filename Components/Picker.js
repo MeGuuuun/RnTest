@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { useState } from 'react';
 
 import { Picker } from '@react-native-picker/picker';
 import Slider from '@react-native-community/slider';
 
 
-const PickerComponent = () => {
+const PickerComponent = (props) => {
     const [country, setCountry] = useState("")
     const [value, setValue] = useState("")
 
@@ -30,6 +30,11 @@ const PickerComponent = () => {
                 step = {0}
             ></Slider>
             <Text style = {styles.text}>{value}</Text>
+            <ActivityIndicator
+                style = {{paddingTop:20}}
+                size = 'large'
+                animating = {props.loading}
+            ></ActivityIndicator>
         </View>
     );
 }

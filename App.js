@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, ScrollView, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Button, TextInput, Image } from 'react-native';
 import {useState} from "react";
 
 
@@ -8,9 +8,12 @@ import Generator from './Components/Generator';
 import NumList from './Components/NumList';
 import Picker from './Components/Picker';
 
+import Cat from './assets/Pado.jpg';
+
 export default function App() {
   const [appName, setAppName] = useState("First App")
   const [random, setRandom] = useState([30, 999])
+  const [loading, setLoading] = useState(true)
 
   {/* 랜덤 숫자를 생성하는 메소드
   Math.floor() 함수는 주어진 숫자와 같거나 작은 정수 중에서 가장 큰 수를 반환합니다.
@@ -32,7 +35,13 @@ export default function App() {
 
   return (
     <View style={styles.mainView}>
-      <Picker></Picker>
+      <Picker loading = {loading}></Picker>
+      <Image
+        style={{width:300, height:600}}
+        source = {Cat}
+        resizeMode='contain'
+        onLoadEnd={()=>(setLoading(false))}
+      ></Image>
       <Header name = {appName} />
       <Generator add = {onAddRandomNum}></Generator>
       <NumList num = {random} delete = {onNumDelete}></NumList>

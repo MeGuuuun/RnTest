@@ -10,7 +10,12 @@ const Home = (props) => {
             <Button
                 title = 'To User Screen'
                 onPress={()=>{
-                    props.navigation.navigate("User")
+                    props.navigation.navigate("User",
+                    {
+                        userIdx:100,
+                        userName:"Terry",
+                        userAge:24
+                    })
                 }} />
         </View>
     );

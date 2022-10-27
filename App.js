@@ -12,9 +12,14 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='User'>
         <Stack.Screen name = "Home" component = {Home} />
-        <Stack.Screen name = "User" component = {User} />
+        <Stack.Screen name = "User" component = {User}
+          initialParams={{
+            userIdx:0,
+            userName:'no-name',
+            userAge:0
+          }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
